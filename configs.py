@@ -3,7 +3,7 @@ import os
 
 class Config:
     # network meta params
-    python_path = '/home/assafsho/PycharmProjects/network/venv/bin/python2.7'
+    python_path = '/home/jev/anaconda3/envs/zssr/bin/python'
     scale_factors = [[2.0, 2.0]]  # list of pairs (vertical, horizontal) for gradual increments in resolution
     base_change_sfs = []  # list of scales after which the input is changed to be the output (recommended for high sfs)
     max_iters = 3000
@@ -85,12 +85,14 @@ X2_GIVEN_KERNEL_CONF.augment_allow_rotation = False
 X2_GIVEN_KERNEL_CONF.back_projection_iters = [2]
 X2_GIVEN_KERNEL_CONF.input_path = os.path.dirname(__file__) + '/kernel_example'
 
+
 # An example for a typical setup for real images. (Kernel needed + mild unknown noise)
 # back-projection is not recommended because of the noise.
 X2_REAL_CONF = Config()
 X2_REAL_CONF.output_flip = False
 X2_REAL_CONF.back_projection_iters = [0]
-X2_REAL_CONF.input_path = os.path.dirname(__file__) + '/real_example'
+# X2_REAL_CONF.input_path = os.path.dirname(__file__) + '/real_example'
+X2_REAL_CONF.input_path = os.path.dirname(__file__) + '/test_data'
 X2_REAL_CONF.noise_std = 0.0125
 X2_REAL_CONF.augment_allow_rotation = False
 X2_REAL_CONF.augment_scale_diff_sigma = 0
